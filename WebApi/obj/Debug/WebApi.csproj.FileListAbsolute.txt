@@ -94,7 +94,6 @@ C:\Pratice\EmployeeCRUD\WebApi\bin\zh-Hant\System.Web.Razor.resources.dll
 C:\Pratice\EmployeeCRUD\WebApi\bin\zh-Hant\System.Web.WebPages.resources.dll
 C:\Pratice\EmployeeCRUD\WebApi\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
 C:\Pratice\EmployeeCRUD\WebApi\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
-C:\Pratice\EmployeeCRUD\WebApi\obj\Debug\WebApi.csprojAssemblyReference.cache
 C:\Pratice\EmployeeCRUD\WebApi\obj\Debug\WebApi.csproj.CoreCompileInputs.cache
 C:\Pratice\EmployeeCRUD\WebApi\obj\Debug\WebApi.csproj.CopyComplete
 C:\Pratice\EmployeeCRUD\WebApi\obj\Debug\WebApi.dll
