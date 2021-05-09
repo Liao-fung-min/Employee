@@ -1,0 +1,79 @@
+﻿@model IEnumerable<MVC.Models.MvcEmployeeModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a href="@Url.Action("AddOrEdit","Employee")" class="btn-default btn"><i class="fas fa-user-plus"></i>新增職員</a>
+</p>
+<table class="table table-striped table-hover">
+ 
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Positioin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>Actions</th>
+        </tr>
+ 
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Positioin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            <a href="@Url.Action("AddOrEdit", "Employee", new { id = item.EmployeeID})" class="btn btn-default"><i class="fas fa-pencil-alt"></i>修改</a>
+            <a onclick="Delete(@item.EmployeeID)" class="btn btn-default"><i class="fas fa-pencil-alt"></i>刪除</a>
+        </td>
+    </tr>
+}
+
+</table>
+
+@section scripts{
+    
+    <script>
+        $(function () {
+            var successMessage = '@TempData["SuccessMessage"]'
+            if (successMessage != '') {
+
+                alertify.success(successMessage);
+
+            }
+
+        });
+        function Delete(id) {
+
+            alertify.confirm('side project', '你確定要刪除嗎?', function () {
+                window.location.href='@Url.Action("Delete","Employee")/' + id;
+
+            }, null);
+
+        }
+
+
+    </script>
+    
+    }
+
