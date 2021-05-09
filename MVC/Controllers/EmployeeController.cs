@@ -19,14 +19,14 @@ namespace MVC.Controllers
             return View(empList);
         }
 
-        public ActionResult AddAddOrEdit() {
+        public ActionResult AddOrEdit(int id = 0) {
 
-            return View();
+            return View(new MvcEmployeeModel());
         
         
         }
         [HttpPost]
-        public ActionResult AddAddOrEdit()
+        public ActionResult AddOrEdit()
         {
 
             return View();
