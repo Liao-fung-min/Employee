@@ -8,6 +8,8 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="https://kit.fontawesome.com/e6e806ed98.js" crossorigin="anonymous"></script>
+    <link href="~/Content/alertifyjs/alertify.rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/alertifyjs/themes/default.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -32,6 +34,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/alertify.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

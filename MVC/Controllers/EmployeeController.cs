@@ -19,19 +19,50 @@ namespace MVC.Controllers
             return View(empList);
         }
 
-        public ActionResult AddOrEdit(int id = 0) {
+        public ActionResult AddOrEdit(int id = 0)
+        {
+            if (id == 0)
 
-            return View(new MvcEmployeeModel());
-        
-        
+                return View(new MvcEmployeeModel());
+
+
+
+            else
+            {
+
+                HttpResponseMessage response = GlobalVariables.WebApiClient.GetAsync("Employee/" + id.ToString()).Result;
+                return View(response.Content.ReadAsAsync<MvcEmployeeModel>().Result);
+            }
+
+
         }
         [HttpPost]
-        public ActionResult AddOrEdit()
+        public ActionResult AddOrEdit(MvcEmployeeModel emp)
         {
+            if (emp.EmployeeID == 0)
+            {
+                HttpResponseMessage response = GlobalVariables.WebApiClient.PostAsJsonAsync("Employee", emp).Result;
+                TempData["SuccessMessage"] = "儲存成功!";
 
-            return View();
+            }
+            else
+            {
+
+                HttpResponseMessage response = GlobalVariables.WebApiClient.PutAsJsonAsync("Employee/" + emp.EmployeeID, emp).Result;
+                TempData["SuccessMessage"] = "更新成功!";
+
+            }
+
+            return RedirectToAction("Index");
 
 
+        }
+
+        public ActionResult Delete(int id)
+        {
+            HttpResponseMessage response = GlobalVariables.WebApiClient.DeleteAsync("Employee/" + id.ToString()).Result;
+            TempData["SuccessMessage"] = "刪除成功!";
+            return RedirectToAction("Index");
         }
     }
 }

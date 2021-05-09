@@ -43,11 +43,37 @@
             @Html.DisplayFor(modelItem => item.Salary)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            <a href="@Url.Action("AddOrEdit", "Employee", new { id = item.EmployeeID})" class="btn btn-default"><i class="fas fa-pencil-alt"></i>修改</a>
+            <a onclick="Delete(@item.EmployeeID)" class="btn btn-default"><i class="fas fa-pencil-alt"></i>刪除</a>
         </td>
     </tr>
 }
 
 </table>
+
+@section scripts{
+    
+    <script>
+        $(function () {
+            var successMessage = '@TempData["SuccessMessage"]'
+            if (successMessage != '') {
+
+                alertify.success(successMessage);
+
+            }
+
+        });
+        function Delete(id) {
+
+            alertify.confirm('side project', '你確定要刪除嗎?', function () {
+                window.location.href='@Url.Action("Delete","Employee")/' + id;
+
+            }, null);
+
+        }
+
+
+    </script>
+    
+    }
+

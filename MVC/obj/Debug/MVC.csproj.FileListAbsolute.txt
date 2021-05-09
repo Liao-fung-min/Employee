@@ -81,8 +81,8 @@ C:\Pratice\EmployeeCRUD\MVC\bin\zh-Hant\System.Web.Razor.resources.dll
 C:\Pratice\EmployeeCRUD\MVC\bin\zh-Hant\System.Web.WebPages.resources.dll
 C:\Pratice\EmployeeCRUD\MVC\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
 C:\Pratice\EmployeeCRUD\MVC\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Pratice\EmployeeCRUD\MVC\obj\Debug\MVC.csprojAssemblyReference.cache
 C:\Pratice\EmployeeCRUD\MVC\obj\Debug\MVC.csproj.CoreCompileInputs.cache
 C:\Pratice\EmployeeCRUD\MVC\obj\Debug\MVC.csproj.CopyComplete
 C:\Pratice\EmployeeCRUD\MVC\obj\Debug\MVC.dll
 C:\Pratice\EmployeeCRUD\MVC\obj\Debug\MVC.pdb
-C:\Pratice\EmployeeCRUD\MVC\obj\Debug\MVC.csprojAssemblyReference.cache
